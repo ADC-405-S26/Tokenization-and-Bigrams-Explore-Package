@@ -20,6 +20,10 @@
 #' @export
 create_bigrams <- function(input, text_col)
 {
+  checkmate::assert_data_frame(input)
+  checkmate::assert_string(text_col)
+  checkmate::assert_names(names(input), must.include = text_col)
+
   input |>
     tidytext::unnest_tokens(
       output = "bigram",

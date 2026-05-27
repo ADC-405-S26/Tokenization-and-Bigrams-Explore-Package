@@ -22,6 +22,10 @@
 #' @export
 plot_top_bigrams <- function(bigram_input, n = 10)
 {
+  checkmate::assert_data_frame(bigram_input)
+  checkmate::assert_names(names(bigram_input), must.include = "bigram")
+  checkmate::assert_count(n, positive = TRUE)
+
   bigram_counts <- bigram_input |>
     dplyr::count(bigram, sort = TRUE) |>
     dplyr::slice_head(n = n)

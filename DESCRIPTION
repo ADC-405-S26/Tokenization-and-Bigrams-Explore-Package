@@ -10,7 +10,11 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
 Imports:
+    checkmate,
     dplyr,
     ggplot2,
     tidyselect,
     tidytext
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
