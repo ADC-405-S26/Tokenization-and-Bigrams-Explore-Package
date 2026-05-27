@@ -1,0 +1,70 @@
+---
+title: "tobitext-overview"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{tobitext-overview}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(tobitext)
+```
+# Overview
+
+`tobitext` is a beginner friendly text analysis package focused on tokenization and bigram analysis workflows.
+
+The package provides simple functions for:
+
+- word tokenization
+- bigram creation
+- bigram visualization
+
+This vignette demonstrates a complete workflow using the included `sample_text` dataset.
+
+# Example dataset
+
+The package includes a small example dataset called `sample_text`.
+
+```{r}
+sample_text
+```
+
+# Tokenize text into words
+
+The `tokenize_words()` function converts text into individual word tokens.
+
+```{r}
+tokens <- tokenize_words(sample_text, "text")
+
+tokens
+```
+
+# Create bigrams
+
+The `create_bigrams()` function creates 2 word combinations from text.
+
+```{r}
+bigrams <- create_bigrams(sample_text, "text")
+
+bigrams
+```
+
+# Plot common bigrams
+
+The `plot_top_bigrams()` function visualizes the most common bigrams.
+
+```{r}
+plot_top_bigrams(bigrams)
+```
+
+# Conclusion
+
+`tobitext` provides a simple and beginner friendly workflow for enthusiast to explore text tokenization and bigram analysis in R.

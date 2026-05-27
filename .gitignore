@@ -51,3 +51,6 @@ rsconnect/
 project.Rcheck/
 project*.tar.gz
 project*.tgz
+inst/doc
+/doc/
+/Meta/
