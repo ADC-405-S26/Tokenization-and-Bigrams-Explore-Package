@@ -8,3 +8,10 @@
 ^README\.Rmd$
 ^doc$
 ^Meta$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
+^tobitext\.Rcheck$
+^tobitext.*\.tar\.gz$
+^tobitext.*\.tgz$
