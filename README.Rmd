@@ -1,0 +1,66 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# tobitext
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of `tobitext` is to provide simple functions for beginner NLP and text analysis workflows using tidytext.
+
+## Installation
+
+You can install the development version of `tobitext` from GitHub with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("YOUR_GITHUB_USERNAME/tobitext")
+```
+
+## Examples
+
+This is a basic example showing a simple text analysis workflow:
+
+```{r example}
+library(tobitext)
+```
+
+#### sample_text dataset
+
+```{r}
+sample_text
+```
+
+#### tokenize_words example
+
+```{r}
+tokens <- tokenize_words(sample_text, "text")
+
+tokens
+```
+
+#### create_bigrams example
+
+```{r}
+bigrams <- create_bigrams(sample_text, "text")
+
+bigrams
+```
+
+#### plot_top_bigrams example
+
+```{r, fig.align='center'}
+plot_top_bigrams(bigrams)
+```
