@@ -1,11 +1,16 @@
-Package: project
-Title: What the Package Does (One Line, Title Case)
+Package: tobitext
+Title: Simple Text Tokenization and Bigram Explorer Tools
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Nhat Minh", "Nguyen", , "notnminh@gmail.com", role = c("aut", "cre"))
+Description: Tools for beginner friendly to explore text tokenization,
+    bigram creation, and bigram visualization using tidytext workflows.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
+Imports:
+    dplyr,
+    ggplot2,
+    tidyselect,
+    tidytext
