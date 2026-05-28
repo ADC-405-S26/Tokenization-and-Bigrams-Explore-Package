@@ -43,10 +43,6 @@ These workflows are commonly used in:
 
 - text mining
 - sentiment analysis
-- topic discovery
-- search engines
-- recommendation systems
-- chatbot and LLM preprocessing
 - predictive text systems
 
 ## Load the package
@@ -80,9 +76,7 @@ This process helps transform raw text into structured data that can
 later be used for:
 
 - word frequency analysis
-- text classification
 - sentiment analysis
-- machine learning workflows
 - LLM preprocessing
 
 ``` r
@@ -136,8 +130,6 @@ Bigram analysis is commonly used in:
 
 - predictive text systems
 - search query analysis
-- phrase detection
-- recommendation systems
 - language modeling
 
 ``` r
