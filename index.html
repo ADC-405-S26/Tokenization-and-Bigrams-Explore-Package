@@ -67,11 +67,19 @@
 <div class="section level2">
 <h2 id="why-tobitext">Why tobitext?<a class="anchor" aria-label="anchor" href="#why-tobitext"></a>
 </h2>
-<p>Text analysis can get complicated quickly, especially for beginner NLP projects. This package keeps the workflow small and practical by focusing on three common steps:</p>
+<p>Modern large language models (LLMs) and NLP systems are fundamentally built on token based text processing. Before models can understand or generate language, text first needs to be broken into smaller units such as words, tokens, or n-grams.</p>
+<p><code>tobitext</code> focuses on introducing these foundational NLP concepts through a simple and beginner friendly workflow in R. The package is designed for students and early learners who want to explore how tokenization and bigram analysis work before moving into more advanced machine learning or language modeling tasks.</p>
+<p>The package focuses on three core ideas:</p>
 <ul>
-<li>split text into words</li>
-<li>create 2 word phrases (bigrams)</li>
-<li>plot the most common bigrams</li>
+<li>tokenizing text into individual words</li>
+<li>creating bigrams and n-grams</li>
+<li>identifying repeated language patterns</li>
+</ul>
+<p>These workflows are commonly used in:</p>
+<ul>
+<li>text mining</li>
+<li>sentiment analysis</li>
+<li>predictive text systems</li>
 </ul>
 </div>
 <div class="section level2">
@@ -83,7 +91,7 @@
 <div class="section level2">
 <h2 id="example-dataset">Example dataset<a class="anchor" aria-label="anchor" href="#example-dataset"></a>
 </h2>
-<p>The package includes a small dataset called <code>sample_text</code>.</p>
+<p>The package includes a small dataset called <code>sample_text</code> containing short text passages about Lionel Messi and Lisan al Gaib from Dune.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sample_text</span></span>
 <span><span class="co">#&gt;   id</span></span>
@@ -96,7 +104,13 @@
 <div class="section level2">
 <h2 id="tokenize-words">Tokenize words<a class="anchor" aria-label="anchor" href="#tokenize-words"></a>
 </h2>
-<p>The <code><a href="reference/tokenize_words.html">tokenize_words()</a></code> function turns a text column into one word per row.</p>
+<p>Tokenization is one of the first steps in NLP workflows. The <code><a href="reference/tokenize_words.html">tokenize_words()</a></code> function breaks text into individual word level observations.</p>
+<p>This process helps transform raw text into structured data that can later be used for:</p>
+<ul>
+<li>word frequency analysis</li>
+<li>sentiment analysis</li>
+<li>LLM preprocessing</li>
+</ul>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tokens</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/tokenize_words.html">tokenize_words</a></span><span class="op">(</span><span class="va">sample_text</span>, <span class="st">"text"</span><span class="op">)</span></span>
 <span></span>
@@ -138,7 +152,14 @@
 <div class="section level2">
 <h2 id="create-bigrams">Create bigrams<a class="anchor" aria-label="anchor" href="#create-bigrams"></a>
 </h2>
-<p>The <code><a href="reference/create_bigrams.html">create_bigrams()</a></code> function creates 2 word combinations from the same text column.</p>
+<p>Bigrams are 2 word combinations that help capture relationships between words instead of viewing each word independently.</p>
+<p>For example, the phrase <code>"world cup"</code> contains more meaning together than the individual words <code>"world"</code> and <code>"cup"</code> separately.</p>
+<p>Bigram analysis is commonly used in:</p>
+<ul>
+<li>predictive text systems</li>
+<li>search query analysis</li>
+<li>language modeling</li>
+</ul>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">bigrams</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/create_bigrams.html">create_bigrams</a></span><span class="op">(</span><span class="va">sample_text</span>, <span class="st">"text"</span><span class="op">)</span></span>
 <span></span>
@@ -180,7 +201,16 @@
 <div class="section level2">
 <h2 id="plot-top-bigrams">Plot top bigrams<a class="anchor" aria-label="anchor" href="#plot-top-bigrams"></a>
 </h2>
-<p>The <code><a href="reference/plot_top_bigrams.html">plot_top_bigrams()</a></code> function counts and plots the most common bigrams.</p>
+<p>The <code><a href="reference/plot_top_bigrams.html">plot_top_bigrams()</a></code> function visualizes the most common bigrams in the dataset.</p>
+<p>Finding repeated bigrams helps identify important themes, repeated phrases, and dominant language patterns within text data.</p>
+<p>This type of analysis is often used in:</p>
+<ul>
+<li>news and article analysis</li>
+<li>social media mining</li>
+<li>customer review analysis</li>
+<li>topic exploration</li>
+<li>trend detection</li>
+</ul>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/plot_top_bigrams.html">plot_top_bigrams</a></span><span class="op">(</span><span class="va">bigrams</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-5-1.png" alt="" width="100%" style="display: block; margin: auto;"></p>

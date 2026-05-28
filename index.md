@@ -16,13 +16,28 @@ devtools::install_github("ADC-405-S26/Tokenization-and-Bigrams-Explore-Package")
 
 ## Why tobitext?
 
-Text analysis can get complicated quickly, especially for beginner NLP
-projects. This package keeps the workflow small and practical by
-focusing on three common steps:
+Modern large language models (LLMs) and NLP systems are fundamentally
+built on token based text processing. Before models can understand or
+generate language, text first needs to be broken into smaller units such
+as words, tokens, or n-grams.
 
-- split text into words
-- create 2 word phrases (bigrams)
-- plot the most common bigrams
+`tobitext` focuses on introducing these foundational NLP concepts
+through a simple and beginner friendly workflow in R. The package is
+designed for students and early learners who want to explore how
+tokenization and bigram analysis work before moving into more advanced
+machine learning or language modeling tasks.
+
+The package focuses on three core ideas:
+
+- tokenizing text into individual words
+- creating bigrams and n-grams
+- identifying repeated language patterns
+
+These workflows are commonly used in:
+
+- text mining
+- sentiment analysis
+- predictive text systems
 
 ## Load the package
 
@@ -33,7 +48,8 @@ library(tobitext)
 
 ## Example dataset
 
-The package includes a small dataset called `sample_text`.
+The package includes a small dataset called `sample_text` containing
+short text passages about Lionel Messi and Lisan al Gaib from Dune.
 
 ``` r
 
@@ -48,9 +64,16 @@ sample_text
 
 ## Tokenize words
 
-The
+Tokenization is one of the first steps in NLP workflows. The
 [`tokenize_words()`](https://adc-405-s26.github.io/Tokenization-and-Bigrams-Explore-Package/reference/tokenize_words.md)
-function turns a text column into one word per row.
+function breaks text into individual word level observations.
+
+This process helps transform raw text into structured data that can
+later be used for:
+
+- word frequency analysis
+- sentiment analysis
+- LLM preprocessing
 
 ``` r
 
@@ -94,9 +117,17 @@ head(tokens, 10)
 
 ## Create bigrams
 
-The
-[`create_bigrams()`](https://adc-405-s26.github.io/Tokenization-and-Bigrams-Explore-Package/reference/create_bigrams.md)
-function creates 2 word combinations from the same text column.
+Bigrams are 2 word combinations that help capture relationships between
+words instead of viewing each word independently.
+
+For example, the phrase `"world cup"` contains more meaning together
+than the individual words `"world"` and `"cup"` separately.
+
+Bigram analysis is commonly used in:
+
+- predictive text systems
+- search query analysis
+- language modeling
 
 ``` r
 
@@ -142,7 +173,18 @@ head(bigrams, 10)
 
 The
 [`plot_top_bigrams()`](https://adc-405-s26.github.io/Tokenization-and-Bigrams-Explore-Package/reference/plot_top_bigrams.md)
-function counts and plots the most common bigrams.
+function visualizes the most common bigrams in the dataset.
+
+Finding repeated bigrams helps identify important themes, repeated
+phrases, and dominant language patterns within text data.
+
+This type of analysis is often used in:
+
+- news and article analysis
+- social media mining
+- customer review analysis
+- topic exploration
+- trend detection
 
 ``` r
 
