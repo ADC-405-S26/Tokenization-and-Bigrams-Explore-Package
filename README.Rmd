@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of `tobitext` is to provide simple functions for beginner NLP and text analysis workflows using tidytext.
+`tobitext` is a small R package for simple text analysis workflows. It helps users tokenize text, create bigrams, and visualize the most common bigrams using a tidytext style workflow.
 
 ## Installation
 
@@ -26,41 +26,63 @@ You can install the development version of `tobitext` from GitHub with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("YOUR_GITHUB_USERNAME/tobitext")
+devtools::install_github("ADC-405-S26/Tokenization-and-Bigrams-Explore-Package")
 ```
 
-## Examples
+## Why tobitext?
 
-This is a basic example showing a simple text analysis workflow:
+Text analysis can get complicated quickly, especially for beginner NLP projects. This package keeps the workflow small and practical by focusing on three common steps:
+
+- split text into words
+- create 2 word phrases (bigrams)
+- plot the most common bigrams
+
+## Load the package
 
 ```{r example}
 library(tobitext)
 ```
 
-#### sample_text dataset
+## Example dataset
+
+The package includes a small dataset called `sample_text`.
 
 ```{r}
 sample_text
 ```
 
-#### tokenize_words example
+## Tokenize words
+
+The `tokenize_words()` function turns a text column into one word per row.
 
 ```{r}
 tokens <- tokenize_words(sample_text, "text")
 
-tokens
+head(tokens, 10)
 ```
 
-#### create_bigrams example
+## Create bigrams
+
+The `create_bigrams()` function creates 2 word combinations from the same text column.
 
 ```{r}
 bigrams <- create_bigrams(sample_text, "text")
 
-bigrams
+head(bigrams, 10)
 ```
 
-#### plot_top_bigrams example
+## Plot top bigrams
+
+The `plot_top_bigrams()` function counts and plots the most common bigrams.
 
 ```{r, fig.align='center'}
-plot_top_bigrams(bigrams)
+plot_top_bigrams(bigrams, n = 10)
 ```
+
+## Package functions
+
+`tobitext` currently includes:
+
+- `tokenize_words()`
+- `create_bigrams()`
+- `plot_top_bigrams()`
